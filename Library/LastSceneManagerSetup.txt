@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/ProceduralWorld.unity
+- path: Assets/Scene/testscene.unity
   isLoaded: 1
   isActive: 1

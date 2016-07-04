@@ -15,10 +15,19 @@ public class TurnController : MonoBehaviour {
     }
 
     private TurnStates currentState;
+    SpawnTroops sT;
 
-    void start()
+    void Awake()
+    {
+         sT = gameObject.GetComponent<SpawnTroops>();
+    }
+    
+
+    void Start()
     {
         currentState = TurnStates.START;
+        
+
     }
 
     void Update()
@@ -50,6 +59,8 @@ public class TurnController : MonoBehaviour {
         }
     }
 
+    
+
     void OnGUI()
     {
         if(GUILayout.Button("Next State"))
@@ -58,6 +69,31 @@ public class TurnController : MonoBehaviour {
 
             Debug.Log(currentState);
         }
+
+        if (GUILayout.Button("Spawn Blue"))
+        {
+            string teamColour = "BlueTroop";
+            Vector3 position = new Vector3(0, 0, 0);
+            Quaternion rotation = new Quaternion(0, 0, 0, 0);
+            sT.TroopSpawn(teamColour, position, rotation);  
+        }
+
+        if (GUILayout.Button("Spawn Red"))
+        {
+            string teamColour = "RedTroop";
+            Vector3 position = new Vector3(0, 0, 0);
+            Quaternion rotation = new Quaternion(0, 0, 0, 0);
+            sT.TroopSpawn(teamColour, position, rotation);
+        }
+    }
+                        
+    public static int CountTroops(string tag)
+    {
+        int troopNumber = 0;
+
+        troopNumber = GameObject.FindGameObjectsWithTag(tag).Length;
+
+        return troopNumber;
     }
 
 }
