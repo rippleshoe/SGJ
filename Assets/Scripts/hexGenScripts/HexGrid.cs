@@ -8,6 +8,8 @@ public class HexGrid : MonoBehaviour {
 
 	public Color defaultColor = Color.white;
 
+    public bool Label;
+
 	public HexCell cellPrefab;
 	public Text cellLabelPrefab;
 
@@ -71,11 +73,14 @@ public class HexGrid : MonoBehaviour {
 				}
 			}
 		}
-
-		//Text label = Instantiate<Text>(cellLabelPrefab);
-		//label.rectTransform.SetParent(gridCanvas.transform, false);
-		//label.rectTransform.anchoredPosition =
-			//new Vector2(position.x, position.z);
-		//label.text = cell.coordinates.ToString();
-	}
+        if (Label)
+        {
+            Text label = Instantiate<Text>(cellLabelPrefab);
+            label.rectTransform.SetParent(gridCanvas.transform, false);
+            label.rectTransform.anchoredPosition =
+                new Vector2(position.x, position.z);
+            label.text = cell.coordinates.ToString();
+        }
+        
+    }
 }
