@@ -15,12 +15,19 @@ public class TurnController : MonoBehaviour {
     }
 
     private TurnStates currentState;
+    SpawnTroops sT;
 
-    void start()
+    void Awake()
+    {
+         sT = gameObject.GetComponent<SpawnTroops>();
+    }
+    
+
+    void Start()
     {
         currentState = TurnStates.START;
-
         
+
     }
 
     void Update()
@@ -52,7 +59,7 @@ public class TurnController : MonoBehaviour {
         }
     }
 
-    public SpawnTroops sT = new SpawnTroops();
+    
 
     void OnGUI()
     {
@@ -76,7 +83,10 @@ public class TurnController : MonoBehaviour {
 
         if (GUILayout.Button("Spawn Red"))
         {
-            
+            string teamColour = "RedTroop";
+            Vector3 position = new Vector3(0, 0, 0);
+            Quaternion rotation = new Quaternion(0, 0, 0, 0);
+            sT.TroopSpawn(teamColour, position, rotation);
         }
     }
                         

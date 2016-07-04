@@ -25,16 +25,16 @@ public class TeamController : MonoBehaviour {
         numberofTroops = TurnController.CountTroops(teamColour);
         Troops = GameObject.FindGameObjectsWithTag(teamColour);
         if (numberofTroops > LatestCheck)
-        { 
+        {
             //call for loop to attatch game objects
-            
+
             //update LatestCheck Var
             LatestCheck = numberofTroops;
         }
-
-        
+                
     }
 
+    
     
     
 }
