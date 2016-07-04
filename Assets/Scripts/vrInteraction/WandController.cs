@@ -33,7 +33,7 @@ public class WandController : MonoBehaviour {
             return;
         }
 
-        if (controller.GetPressDown(gripButton))
+        if (controller.GetPressDown(triggerButton))
         {
             float minDistance = float.MaxValue;
 
@@ -61,7 +61,7 @@ public class WandController : MonoBehaviour {
             }
         }
 
-        if (controller.GetPressUp(gripButton) && interactingItem != null)
+        if (controller.GetPressUp(triggerButton) && interactingItem != null)
         {
             interactingItem.EndInteraction(this);
         }
@@ -75,7 +75,9 @@ public class WandController : MonoBehaviour {
         InteractableItem collidedItem = collider.GetComponent<InteractableItem>();
         if (collidedItem)
         {
+            Debug.Log("Trigger Enter");
             objectsHoveringOver.Add(collidedItem);
+
         }
     }
 
@@ -84,6 +86,7 @@ public class WandController : MonoBehaviour {
         InteractableItem collidedItem = collider.GetComponent<InteractableItem>();
         if (collidedItem)
         {
+            Debug.Log("Trigger Exit");
             objectsHoveringOver.Remove(collidedItem);
         }
     }

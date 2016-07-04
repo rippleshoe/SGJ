@@ -54,10 +54,7 @@ public class TurnController : MonoBehaviour {
     {
         if(GUILayout.Button("Next State"))
         {
-            if (currentState == TurnStates.START)
-            {
-                currentState = TurnStates.PLAYERTURN;
-            }
+            currentState += 1;
 
             Debug.Log(currentState);
         }
