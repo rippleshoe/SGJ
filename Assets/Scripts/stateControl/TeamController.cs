@@ -20,21 +20,8 @@ public class TeamController : MonoBehaviour {
     }
     //Update Method
     void Update()
-    {
-        
-        numberofTroops = TurnController.CountTroops(teamColour);
+    { 
         Troops = GameObject.FindGameObjectsWithTag(teamColour);
-        if (numberofTroops > LatestCheck)
-        {
-            //call for loop to attatch game objects
-
-            //update LatestCheck Var
-            LatestCheck = numberofTroops;
-        }
-                
+        
     }
-
-    
-    
-    
 }

@@ -3,10 +3,11 @@ using System.Collections;
 
 public class BoardPiece : MonoBehaviour {
 
-    public string pieceID;
-    public string relatedTroop;
+    string relationID;
 
     public GameObject GameController;
+
+    public GameObject relatedPiece;
 
     TeamController GC;
     
@@ -18,11 +19,14 @@ public class BoardPiece : MonoBehaviour {
 
     void Start()
     {
-        int LocalID = GC.numberofTroops;
+        string teamColour = GC.teamColour;
+        int LocalID = TurnController.CountTroops(teamColour);
         string LocalTeam = GC.teamColour;
-
-        pieceID = (LocalTeam + LocalID.ToString());
-       
+        relationID = (LocalTeam + LocalID.ToString());
+        gameObject.name = (relationID);
+        string floatID = relationID + "Force";
+        
+        
     }
 
 }
