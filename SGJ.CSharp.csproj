@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\stateControl\TurnController.cs" />
     <Compile Include="Assets\Scripts\troopScripts\BoardPiece.cs" />
     <Compile Include="Assets\Scripts\troopScripts\SpawnTroops.cs" />
+    <Compile Include="Assets\Scripts\troopScripts\TroopInfo.cs" />
     <Compile Include="Assets\Scripts\vrInteraction\InteractableItem.cs" />
     <Compile Include="Assets\Scripts\vrInteraction\WandController.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
