@@ -67,6 +67,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SGJ.CSharp.Plugins.csproj">
@@ -84,7 +90,10 @@
     <Compile Include="Assets\Scripts\hexGenScripts\HexMetrics.cs" />
     <Compile Include="Assets\Scripts\proceduralMapGen\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\proceduralMapGen\MeshGenerator.cs" />
+    <Compile Include="Assets\Scripts\stateControl\TeamController.cs" />
     <Compile Include="Assets\Scripts\stateControl\TurnController.cs" />
+    <Compile Include="Assets\Scripts\troopScripts\BoardPiece.cs" />
+    <Compile Include="Assets\Scripts\troopScripts\SpawnTroops.cs" />
     <Compile Include="Assets\Scripts\vrInteraction\InteractableItem.cs" />
     <Compile Include="Assets\Scripts\vrInteraction\WandController.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
