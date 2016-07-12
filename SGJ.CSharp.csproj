@@ -81,11 +81,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\hexGenScripts\DuplicateMap.cs" />
+    <Compile Include="Assets\Scripts\hexGenScripts\GenerateHeights.cs" />
     <Compile Include="Assets\Scripts\hexGenScripts\HexCell.cs" />
     <Compile Include="Assets\Scripts\hexGenScripts\HexCoordinates.cs" />
     <Compile Include="Assets\Scripts\hexGenScripts\HexDirection.cs" />
+    <Compile Include="Assets\Scripts\hexGenScripts\HexEdgeType.cs" />
     <Compile Include="Assets\Scripts\hexGenScripts\HexGrid.cs" />
-    <Compile Include="Assets\Scripts\hexGenScripts\HexMapEditor.cs" />
     <Compile Include="Assets\Scripts\hexGenScripts\HexMesh.cs" />
     <Compile Include="Assets\Scripts\hexGenScripts\HexMetrics.cs" />
     <Compile Include="Assets\Scripts\proceduralMapGen\MapGenerator.cs" />
