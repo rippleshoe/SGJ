@@ -5,6 +5,7 @@ public class HexGrid : MonoBehaviour {
 
 	public int width = 6;
 	public int height = 6;
+    public string instanceTag;
 
 	public Color defaultColor = Color.white;
 
@@ -56,6 +57,9 @@ public class HexGrid : MonoBehaviour {
 		cell.transform.localPosition = position;
 		cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
 		cell.color = defaultColor;
+        cell.name = cell.coordinates.ToString();
+        cell.tag = instanceTag;
+        
 
 		if (x > 0) {
 			cell.SetNeighbor(HexDirection.W, cells[i - 1]);

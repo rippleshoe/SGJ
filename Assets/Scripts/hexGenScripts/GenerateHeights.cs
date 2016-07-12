@@ -4,10 +4,12 @@ using System.Collections;
 public class GenerateHeights : MonoBehaviour {
 
     public GameObject[] cells;
+    public GameObject blueMap, redMap;
+    public string Bluebase;
 
     void Start()
     {
-        cells = GameObject.FindGameObjectsWithTag("Cells");
+        cells = GameObject.FindGameObjectsWithTag("BigCells");
 
         for (int i = 0; i <= cells.Length - 1; i++)
         {
@@ -83,12 +85,14 @@ public class GenerateHeights : MonoBehaviour {
 
         }
 
+        
+
         for (int i = 0; i <= cells.Length - 1; i++)
         {
             HexCell hc = cells[i].GetComponent<HexCell>();
             if (hc.Elevation >= 6)
             {
-                hc.color = Color.grey;
+                hc.color = Color.white;
             }
             else if (hc.Elevation >= 3)
             {
@@ -99,7 +103,19 @@ public class GenerateHeights : MonoBehaviour {
                 hc.color = Color.blue;
             }
         }
-            HexGrid hg = gameObject.GetComponent<HexGrid>();
-            hg.Refresh();
-        }
+
+        HexGrid hg = gameObject.GetComponent<HexGrid>();
+        hg.Refresh();
+
+        CopyHeights blueCH = blueMap.GetComponent<CopyHeights>();
+        CopyHeights redCH = redMap.GetComponent<CopyHeights>();
+
+        blueCH.CopyHeightMap(cells);
+        redCH.CopyHeightMap(cells);
+
+
+    }
+
+    
+
     }
